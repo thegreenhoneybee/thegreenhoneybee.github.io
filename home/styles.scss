@@ -1,0 +1,126 @@
+@use '../resources/generic_styles' as global;
+
+#top {
+  min-height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: global.$highlight-background;
+
+  #blurb {
+    align-self: center;
+    flex: 1 1 300px;
+    max-width: 600px;
+  }
+}
+
+#explanation {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+#projectsWrapper {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+
+  #tabs {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+
+  	* {
+  	  flex-grow: 1;
+  	  flex-basis: 250px;
+  	  justify-content: center;
+  	}
+  }
+
+  #projectsDiv {
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    > div {
+      width: 100%;
+      min-height: 100%;
+      padding: 10px;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-rows: repeat(auto-fit , 250px);
+      justify-content: space-between;
+      justify-items: center;
+      grid-gap: 15px;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}
+
+.project {
+  width: 250px;
+  height: 250px;
+  padding: 0 20px;
+
+  background: global.$element;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    transition: all 0.4s;
+    opacity: 0;
+    transform: scale(1.2);
+    transform-origin: center;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(150deg, global.sheen(global.$interactable, global.$element));
+    }
+  }
+
+  h3 {
+    margin: 0;
+    text-align: center;
+    z-index: 1;
+  }
+
+  p {
+    margin: 20px 0 0 0;
+    width: 100%;
+    z-index: 1;
+    word-wrap: break-word;
+
+    transition: all 0.4s;
+    opacity: 0;
+    height: 0;
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    p {
+      opacity: 1;
+    }
+  }
+}

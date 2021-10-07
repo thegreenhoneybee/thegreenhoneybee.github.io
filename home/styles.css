@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/* RESET CSS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import "reset.css";
+/* GENERAL BODY ATTRIBUTES ––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+  display: flex;
+  justify-content: center;
+  font: 16px Verdana;
+  color: #CCCCCC;
+  background-color: #25274d;
+  min-height: 100vh;
+}
+
+p {
+  color: #CCCCCC;
+}
+
+body, body * {
+  box-sizing: border-box;
+  line-height: 1.2em;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #959DBD;
+  border: 0 none #ffffff;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* TEXT ELEMENTS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3 {
+  display: inline-block;
+  color: #CCCCCC;
+}
+
+h1 {
+  font: 7rem Silom, sans-serif;
+  margin: 100px;
+}
+
+h2 {
+  font: 3rem Futura, sans-serif;
+}
+
+h3 {
+  font: 1.8rem Futura, sans-serif;
+}
+
+h2 {
+  margin: 40px;
+}
+
+h3 {
+  padding: 5px;
+}
+
+pre, textarea {
+  font-family: monospace;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+
+textarea {
+  resize: none;
+}
+
+*:focus {
+  outline: inherit;
+}
+
+/* CENTER ELEMENT –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body > #center {
+  width: 100%;
+  max-width: 1300px;
+  margin: 40px 60px;
+  padding: 0 10px;
+}
+
+/* INTERACTABLE ELEMENTS ––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+label.interactable input {
+  display: none;
+}
+label.interactable div {
+  color: #CCCCCC;
+  font: 1.5rem Arial Black, Arial;
+  padding: 4px;
+  border-width: 0;
+  text-align: center;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome, Edge, Opera and Firefox */
+}
+label.interactable div {
+  background: #595e75;
+}
+label.interactable input:checked + div {
+  background: #3c4b86;
+}
+label.interactable:hover div {
+  background: #505569;
+}
+label.interactable:hover input:checked + div {
+  background: #364479;
+}
+label.interactable:active div {
+  background: #353846;
+}
+label.interactable:active input:checked + div {
+  background: #242d50;
+}
+
+#top {
+  min-height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #25274d;
+}
+#top #blurb {
+  align-self: center;
+  flex: 1 1 300px;
+  max-width: 600px;
+}
+
+#explanation {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+#projectsWrapper {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+#projectsWrapper #tabs {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
+}
+#projectsWrapper #tabs * {
+  flex-grow: 1;
+  flex-basis: 250px;
+  justify-content: center;
+}
+#projectsWrapper #projectsDiv {
+  flex-grow: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#projectsWrapper #projectsDiv > div {
+  width: 100%;
+  min-height: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, 250px);
+  justify-content: space-between;
+  justify-items: center;
+  grid-gap: 15px;
+}
+#projectsWrapper #projectsDiv .hidden {
+  display: none;
+}
+
+.project {
+  width: 250px;
+  height: 250px;
+  padding: 0 20px;
+  background: #325773;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+.project img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.4s;
+  opacity: 0;
+  transform: scale(1.2);
+  transform-origin: center;
+}
+.project img::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(150deg, #3c4b86 0%, #394f80 45%, #37517d 50%, #355379 55%, #325773 100%);
+}
+.project h3 {
+  margin: 0;
+  text-align: center;
+  z-index: 1;
+}
+.project p {
+  margin: 20px 0 0 0;
+  width: 100%;
+  z-index: 1;
+  word-wrap: break-word;
+  transition: all 0.4s;
+  opacity: 0;
+  height: 0;
+}
+.project:hover img {
+  opacity: 1;
+  transform: scale(1);
+}
+.project:hover p {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Simon Windon's Code Editor.">
+		<meta name="keywords" content="Simon, Windon, Code, Editor">
+		<meta name="author" content="Simon Windon">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="../resources/favicon.ico">
+
+		<title>Simon's Code Editor</title>
+	  <link rel='stylesheet' href='../resources/generic_styles.css'>
+		<link rel='stylesheet' href='styles.css'>
+
+		<script src="sketch.js" type="module"></script>
+	</head>
+	<body>
+		<div id='center'>
+			<div class='textEditor' language='source.c' href='Languages/c.tmLanguage'>a = NULL true;
+#ifndef HELLO_WORLD
+#define HELLO_WORLD vec3(0.0, 0.0, 0.0)
+#else
+#define LOREM_IPSUM
+#endif
+
+#pragma GENERIC_PRAGMA
+
+#pragma glslify: noise = require(glsl-noise)
+#pragma glslify: random = require(glsl-random)
+
+// this is a comment, and you can see the variable "gl_Layer" is NOT highlighted.
+/*
+TODO: This is also a comment
+*/
+
+#define PI 3.14159
+
+float y(float x) {
+	return sin(x*2.0*PI);
+}
+
+#pragma glslify: export(y)
+
+void main() {
+	vec3 a = noise(gl_FragCoord.xy);
+	vec4 b = a.zyxx;
+	ivec4 c = ivec4(0);
+	mat2 d = mat2(1.0);
+	mat3 e = mat3(a, b, vec3(2.0));
+
+	b.x = 1.5;
+	c.y = 190;
+
+	a.xyz = gl_FragCoord.xyz;
+
+	gl_FragColor = vec4(a.rgb, b.a);
+}
+
+"this is a string here abs"
+
+
+#define UNICODE
+#include <windows.h>
+
+int main(int argc, char **argv) {
+  int speed = 0, speed1 = 0, speed2 = 0; // 1-20
+  printf("Set Mouse Speed by Maverick\n");
+
+  SystemParametersInfo(SPI_GETMOUSESPEED, 0, &speed, 0);
+  printf("Current speed: %2d\n", speed);
+
+  if (argc == 1) return 0;
+  if (argc >= 2) sscanf(argv[1], "%d", &speed1);
+  if (argc >= 3) sscanf(argv[2], "%d", &speed2);
+
+  if (argc == 2) // set speed to first value
+    speed = speed1;
+  else if (speed == speed1 || speed == speed2) // alternate
+    speed = speed1 + speed2 - speed;
+  else
+    speed = speed1;  // start with first value
+
+  SystemParametersInfo(SPI_SETMOUSESPEED, 0,  speed, 0);
+  SystemParametersInfo(SPI_GETMOUSESPEED, 0, &speed, 0);
+  printf("New speed:     %2d\n", speed);
+  return 0;
+}</div>
+		</div>
+	</body>
+</html>

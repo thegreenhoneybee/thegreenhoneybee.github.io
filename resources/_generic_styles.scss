@@ -1,0 +1,194 @@
+@use "sass:math";
+
+/* RESET CSS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import "reset.css";
+
+// COLOR PALETTES –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+$body-background: #25274d;
+$highlight-background: #25274d;
+$text: #CCCCCC;
+$titles: #CCCCCC;
+$scroll-bar: #959DBD;
+
+$interactable: #3c4b86;
+$interactable-text: #CCCCCC;
+$interactable-inactive: #595e75;
+$interactable-hover: scale-color($interactable, $lightness: -10%);
+$interactable-active: scale-color($interactable, $lightness: -40%);
+$interactable-focus: scale-color($interactable, $lightness: 5%);
+
+$interactable-inactive-hover: scale-color($interactable-inactive, $lightness: -10%);
+$interactable-inactive-active: scale-color($interactable-inactive, $lightness: -40%);
+$interactable-inactive-focus: scale-color($interactable-inactive, $lightness: 5%);
+
+$element: #325773;
+$element-text: #8badd8;
+$contrast: #203844;
+$saturated-contrast: #3e6b8e;
+
+// @media (prefers-color-scheme: dark) {
+//
+// }
+
+// FUNCTIONS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@function sheen($c1, $c2) {
+  @return $c1 0%, lerpColor($c1, $c2, 0.3) 45%, lerpColor($c1, $c2, 0.5) 50%, lerpColor($c1, $c2, 0.7) 55%, $c2 100%;
+}
+
+@function lerpColor($c1, $c2, $lerp) {
+  @return rgba(
+    lerpValue(red($c1), red($c2), $lerp),
+    lerpValue(green($c1), green($c2), $lerp),
+    lerpValue(blue($c1), blue($c2), $lerp),
+    lerpValue(alpha($c1), alpha($c2), $lerp),
+  );
+}
+
+@function lerpValue($v1, $v2, $l) {
+  @return $v1 + ($v2 - $v1) * $l;
+}
+
+// Because aspect-ratio is not propperly supported across all popular browsers
+@mixin displayWrapperAspectRatio($w, $h) {
+  max-height: calc(100vh - 80px);
+	max-width: calc((100vh - 80px) * #{math.div($w, $h)});
+	width: 100%;
+	&::before {
+		float: left;
+		padding-top: calc(#{math.div($h, $w)} * 100%);
+		content: "";
+	}
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}
+
+/* GENERAL BODY ATTRIBUTES ––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+  display: flex;
+  justify-content: center;
+  font: 16px Verdana;
+  color: $text;
+  background-color: $body-background;
+	min-height: 100vh;
+}
+p {
+  color: $text;
+}
+body, body * {
+  box-sizing: border-box;
+  line-height: 1.2em;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: $scroll-bar;
+  border: 0 none #ffffff;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* TEXT ELEMENTS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3 {
+  display: inline-block;
+  color: $titles;
+}
+h1 {
+  font: 7rem Silom, sans-serif;
+  margin: 100px;
+}
+h2 {
+	font: 3rem Futura, sans-serif;
+}
+h3 {
+  font: 1.8rem Futura, sans-serif;
+}
+h2 {
+  margin: 40px;
+}
+h3 {
+  padding: 5px;
+}
+pre, textarea{
+  font-family: monospace;
+  -moz-tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2;
+}
+textarea {
+  resize: none;
+}
+*:focus {
+  outline: inherit;
+}
+
+/* CENTER ELEMENT –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body > #center {
+  width: 100%;
+  max-width: 1300px;
+  margin: 40px 60px;
+  padding: 0 10px;
+}
+
+/* INTERACTABLE ELEMENTS ––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+label.interactable {
+	input {
+	  display: none;
+	}
+	div {
+	  color: $interactable-text;
+	  font: 1.5rem Arial Black, Arial;
+	  padding: 4px;
+	  border-width: 0;
+	  text-align: center;
+	  cursor: pointer;
+
+	  -webkit-touch-callout: none; /* iOS Safari */
+	    -webkit-user-select: none; /* Safari */
+	     -khtml-user-select: none; /* Konqueror HTML */
+	       -moz-user-select: none; /* Old versions of Firefox */
+	        -ms-user-select: none; /* Internet Explorer/Edge */
+	            user-select: none; /* Non-prefixed version, currently
+	                                  supported by Chrome, Edge, Opera and Firefox */
+	}
+
+	div {
+		background: $interactable-inactive;
+	}
+	input:checked + div {
+	  background: $interactable;
+	}
+
+	&:hover {
+		div {
+			background: $interactable-inactive-hover;
+		}
+		input:checked + div {
+			background: $interactable-hover;
+		}
+	}
+	&:active {
+		div {
+			background: $interactable-inactive-active;
+		}
+		input:checked + div {
+			background: $interactable-active;
+		}
+	}
+}
