@@ -1,7 +1,7 @@
 @use "sass:math";
 
 /* RESET CSS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import "reset.css";
+@forward "reset.css";
 
 // COLOR PALETTES –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 $body-background: #25274d;
