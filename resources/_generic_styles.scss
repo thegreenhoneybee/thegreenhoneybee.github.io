@@ -6,11 +6,12 @@
 // COLOR PALETTES –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 $body-background: #25274d;
 $highlight-background: #25274d;
+$scroll-bar: #959DBD;
+
 $text: #CCCCCC;
 $title: #CCCCCC;
 $link: #FF0000;
 $link-active: #E20092;
-$scroll-bar: #959DBD;
 
 $interactable: #3c4b86;
 $interactable-text: #CCCCCC;
@@ -137,6 +138,10 @@ body > #center {
     max-width: 1300px;
     margin: 40px 60px;
     padding: 0 10px;
+
+    > div:not(:last-child) {
+        margin-bottom: 40px;
+    }
 }
 
 /* INTERACTABLE ELEMENTS ––––––––––––––––––––––––––––––––––––––––––––––––––––––– */

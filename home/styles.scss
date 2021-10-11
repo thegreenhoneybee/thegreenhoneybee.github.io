@@ -1,7 +1,7 @@
 @use '../resources/generic_styles' as global;
 
 #top {
-  min-height: 700px;
+  min-height: 660px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -16,7 +16,6 @@
 
 #explanation {
   font-size: 1.2em;
-  margin-bottom: 40px;
 }
 
 #projectsWrapper {

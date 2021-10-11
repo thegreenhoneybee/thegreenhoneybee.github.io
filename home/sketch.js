@@ -1,7 +1,5 @@
 var filter
 
-// TODO: FIX TOOLS BUG, center description text, potentially come up with better css solution
-
 window.onload = requestIdeas
 
 // Gets ideas.json via an XMLHttpRequest
@@ -9,7 +7,6 @@ function requestIdeas() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && (this.status == 200 || this.status == 0)) {
-      var ideas =
       createProjectArea(parseYAMLLike(this.response))
     }
   }

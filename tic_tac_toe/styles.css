@@ -158,6 +158,9 @@ body > #center {
   margin: 40px 60px;
   padding: 0 10px;
 }
+body > #center > div:not(:last-child) {
+  margin-bottom: 40px;
+}
 
 /* INTERACTABLE ELEMENTS ––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 label.interactable input {

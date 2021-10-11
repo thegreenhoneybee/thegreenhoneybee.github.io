@@ -158,6 +158,9 @@ body > #center {
   margin: 40px 60px;
   padding: 0 10px;
 }
+body > #center > div:not(:last-child) {
+  margin-bottom: 40px;
+}
 
 /* INTERACTABLE ELEMENTS ––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 label.interactable input {
@@ -204,7 +207,7 @@ label.interactable:active input:checked + div {
 }
 
 #top {
-  min-height: 700px;
+  min-height: 660px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -218,7 +221,6 @@ label.interactable:active input:checked + div {
 
 #explanation {
   font-size: 1.2em;
-  margin-bottom: 40px;
 }
 
 #projectsWrapper {
