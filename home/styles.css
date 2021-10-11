@@ -137,6 +137,16 @@ textarea {
   resize: none;
 }
 
+a {
+  color: #FF0000;
+}
+a:visited {
+  color: #FF0000;
+}
+a:active {
+  color: #E20092;
+}
+
 *:focus {
   outline: inherit;
 }
@@ -276,7 +286,7 @@ label.interactable:active input:checked + div {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(150deg, #3c4b86 0%, #394f80 45%, #37517d 50%, #355379 55%, #325773 100%);
+  background: linear-gradient(150deg, #3c4b86, #325773);
 }
 .project h3 {
   margin: 0;

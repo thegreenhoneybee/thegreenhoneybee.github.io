@@ -137,6 +137,16 @@ textarea {
   resize: none;
 }
 
+a {
+  color: #FF0000;
+}
+a:visited {
+  color: #FF0000;
+}
+a:active {
+  color: #E20092;
+}
+
 *:focus {
   outline: inherit;
 }

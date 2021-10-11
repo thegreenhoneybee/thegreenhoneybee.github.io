@@ -7,7 +7,9 @@
 $body-background: #25274d;
 $highlight-background: #25274d;
 $text: #CCCCCC;
-$titles: #CCCCCC;
+$title: #CCCCCC;
+$link: #FF0000;
+$link-active: #E20092;
 $scroll-bar: #959DBD;
 
 $interactable: #3c4b86;
@@ -29,24 +31,6 @@ $saturated-contrast: #3e6b8e;
 // @media (prefers-color-scheme: dark) {
 //
 // }
-
-// FUNCTIONS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
-@function sheen($c1, $c2) {
-    @return $c1 0%, lerpColor($c1, $c2, 0.3) 45%, lerpColor($c1, $c2, 0.5) 50%, lerpColor($c1, $c2, 0.7) 55%, $c2 100%;
-}
-
-@function lerpColor($c1, $c2, $lerp) {
-    @return rgba(
-        lerpValue(red($c1), red($c2), $lerp),
-        lerpValue(green($c1), green($c2), $lerp),
-        lerpValue(blue($c1), blue($c2), $lerp),
-        lerpValue(alpha($c1), alpha($c2), $lerp),
-    );
-}
-
-@function lerpValue($v1, $v2, $l) {
-    @return $v1 + ($v2 - $v1) * $l;
-}
 
 // Because aspect-ratio is not propperly supported across all popular browsers
 @mixin displayWrapperAspectRatio($w, $h) {
@@ -107,7 +91,7 @@ body, body * {
 /* TEXT ELEMENTS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3 {
     display: inline-block;
-    color: $titles;
+    color: $title;
 }
 h1 {
     font: 7rem Silom, sans-serif;
@@ -133,6 +117,15 @@ pre, textarea{
 }
 textarea {
     resize: none;
+}
+a {
+    color: $link;
+    &:visited {
+        color: $link;
+    }
+    &:active {
+        color: $link-active;
+    }
 }
 *:focus {
     outline: inherit;
