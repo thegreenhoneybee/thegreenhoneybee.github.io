@@ -1,0 +1,171 @@
+@use '../resources/_generic_styles' as *;
+@use "sass:color";
+
+@media (pointer: coarse), (hover: none) {
+    #flashlight {
+        display: none;
+    }
+}
+
+#flashlight {
+    position: fixed;
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
+    width: 500px;
+    aspect-ratio: 1 / 1;
+
+    -webkit-mask-image: url('hexagon_background.svg');
+    mask-image: url('hexagon_background.svg');
+    -webkit-mask-size: 45px 26px;
+    mask-size: 45px 26px;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient($highlight, transparent 70%);
+        opacity: 0.35;
+    }
+}
+
+header {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 180px 1fr;
+    grid-template-areas: 
+    "name name blurb"
+    "padding icon blurb";
+
+    @media (max-width: 1000px) {
+        grid-template-columns: 1fr !important;
+        grid-template-areas: 
+        "name"
+        "blurb"
+        "icon";
+    }
+
+    > :nth-child(1) {
+        grid-area: name;
+
+        h1 {
+            font-family: 'KeaniaOne';
+            line-height: 0.9;
+        }
+    }
+
+    > :nth-child(2) {
+        grid-area: blurb;
+
+        h3 {
+            width: 250px;
+        }
+    }
+
+    > :nth-child(3) {
+        grid-area: icon;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+#projects {
+    --s: 150px;
+    --w: calc(var(--s) * 2);
+    --a: calc(var(--s) / 2);
+    --r: calc(var(--s) * 13 / 15);
+    --h: calc(var(--w) * 13 / 15);
+
+    display: grid;
+    grid-template-columns: 75px repeat(auto-fill, var(--s) var(--a));
+    grid-auto-rows: var(--r);
+    padding-bottom: var(--r);
+    justify-content: center;
+
+    .projectWrapper {
+        grid-column-end: span 4;
+        transition: filter 0.2s;
+        pointer-events: none;
+        
+        display: flex;
+        justify-content: flex-end;
+
+        &:hover, &.hovered {
+            filter: drop-shadow(2.5px 5px 5px color.adjust($text, $alpha: -0.6));
+            .project {
+                clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+                .contentWrapper {
+                    transform: translateY(-100%)
+                }
+            }
+        }
+
+        &:active .project {
+            background: $contrast-dim;
+        }
+
+        .project {
+            pointer-events: auto;
+            display: block;
+            width: var(--w);
+            height: var(--h);
+            overflow: hidden;
+            text-align: center;
+    
+            clip-path: polygon(27.5% 5%, 72.5% 5%, 95% 50%, 72.5% 95%, 27.5% 95%, 5% 50%);
+            transition: clip-path 0.2s;
+            background: $contrast;
+            color: $contrast-text;
+    
+            .contentWrapper {
+                display: block;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.4s;
+    
+                &:first-child {
+                    padding: 5%;
+                }
+    
+                &::before, .spacer {
+                    width: 50%;
+                    height: 100%;
+                    shape-margin: 10px;
+                }
+    
+                &::before {
+                    content: "";
+                    float: left;
+                    shape-outside: polygon(
+                        0 0,
+                        50% 0,
+                        0 50%,
+                        50% 100%,
+                        0 100%
+                    );
+                }
+    
+                .spacer {
+                    float: right;
+                    shape-outside: polygon(
+                        100% 0,
+                        50% 0,
+                        100% 50%,
+                        50% 100%,
+                        100% 100%
+                    );
+                }
+    
+                .centered {
+                    display: block;
+                }
+            }
+        }
+    }
+}

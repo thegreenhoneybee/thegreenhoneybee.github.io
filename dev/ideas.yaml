@@ -1,0 +1,109 @@
+- Games:
+  - 6 Degrees:
+    - 3d fps spaceship game centering on flight.
+    - Allows movement in all 6 degrees of freedom.
+  - Boomerang Game:
+    - 2d top-down action game. Your only weapons are a limited number of reusable boomerangs.
+  - Car game:
+    - 2d top-down arcade style driving game.
+  - Crosswords:
+    - Create and play regex and regular crosswords.
+  - Heisenberg's maze:
+    - 2d turn-based top-down dungeon crawler. You can either see the world or move.
+    - Heisenberg's uncertainty principle
+  - Input Lag:
+  - Lightening Game:
+    - 2d side scrolling stealth game. Lighting illuminates world for all to see.
+    - Player hides behind things but we can see their eyes/silhouette of the ninja).
+  - Muzzle Flash:
+    - 2d side scrolling action platformer. Navigate using only sound and the light of your shotgun.
+    - Set in a cave. Sounds are visualised on screen.
+  - Free Roller:
+    - Roller blading game.
+  - Swing game:
+    - 2d side scrolling platformer.
+    - Swing shot.
+  - Sailing game:
+    - https://www.youtube.com/watch?v=u5InZ6iknUM
+  - Tower Defence:
+    - 2d top-down tower defence game. Write efficient code to aim your towers.
+  - Wizard game:
+    - 2d side scrolling action game. Manipulate the elements to defeat your opponents.
+    - Spells created combining elements. overuse > affinities. fire force or FMA.
+  - Wood Carving:
+    - Relaxing wood carving game.
+- AIs:
+  - Cathedral:
+    - A territory controlling board game from the 1960s-1970s.
+    - min-max.
+  - Chess:
+    - The classic strategy board game.
+    - min-max (variable weights).
+  - Liars Dice:
+    - A dice game centred around bluffing.
+    - adversarial.
+  - Minesweeper:
+    - The classic video game from the 1960s.
+    - algorithm.
+  - Poker:
+    - Specifically the Texas hold 'em variation from the 1900s in Robstown, Texas.
+    - algorithm.
+  - Pool:
+    - Coming from poule, french for hen. The prize it was originally played for.
+    - algorithm.
+  - Pong:
+    - One of the first video games, made in 1972.
+    - evolution & algorithm & adversarial.
+  - Sudoku:
+    - Originally "Number Place" invented in 1979, popularised in 2004 as sudoku.
+    - algorithm. https://www.youtube.com/channel/UCrnUHCvJBCUggZUqBTAZb4w/videos
+  - Tetris:
+    - The classic video game, created in 1984.
+    - algorithm.
+  - Tic Tac Toe:
+    - The ancient board game, and some variations.
+    - min-max a b pruning
+- Visualisations:
+  - Boids:
+    - An algorithm simulating flocking.
+  - Cellular Automata:
+    - A a grid of similar finite state machines called cells.
+  - Circuits:
+    - Interactive simulation of circuits and explaining the fundamentals of computers.
+  - Fractals:
+    - Interactive visualisation of different fractals.
+  - Light Refraction:
+    - Interactive visualisation of how light behaves when refracted and reflected.
+  - Path Finding:
+    - Interactive visualisation of different path finding algorithms.
+  - Plane Partitioning:
+    - Interactive visualisation of different plane partitioning algorithms.
+    - Voronoi tessellation, binary partitioning.
+  - Noise:
+    - Interactive visualisation of random noise in multiple dimensions.
+  - Planets:
+    - A simulation of celestial bodies.
+  - Sorting Algorithms:
+    - Interactive visualisation of different sorting algorithms.
+  - Image Filters:
+    - Algorithms for displaying images in various other manners and mediums.
+    - String drawing, ascii, minimalist. https://www.youtuatch?v=UsbBSttaJos&t=764s
+- Tools:
+  - Code Editor:
+    - A functional code editor with syntax highlighting using tmLanguage files.
+    - Allows for mass editing using muti-step regexes.
+  - CSS Backgrounds:
+    - Help create complex CSS3 backgrounds.
+  - Dinosaur Heatmap:
+    - An interactive heatmap for recorded dinosaur fossil discoveries.
+  - Music Player:
+    - Music player, visualiser, and synthesiser.
+    - showcase some psychoacoustics https://wwe.com/watch?v=OiW8gzBGz1A
+  - Periodic Table:
+    - An interactive periodic table.
+  - Web Scraper:
+    - A web scraper.
+    - Works in tangent python code on the server.
+  - SVG Editor:
+    - A clean SVG editor for creating simple multilayered SVGs.
+    - https://yqnn.github.io/svg-path-editor/

@@ -1,0 +1,36 @@
+{
+    "complete": {
+        "Sorting Algorithms": "Visualisations for sorting algorithms.",
+        "Boids"             : "An algorithm simulating flocking.",
+        "Cellular Automata" : "A grid of finite state machines called cells.",
+        "Circuits"          : "Simulation of circuits and explaining the fundamentals of computers.",
+        "Fractals"          : "Visualises fractals using WebGL.",
+        "Light Refraction"  : "Interactive visualisation of how light behaves when refracted and reflected.",
+        "Planets"           : "A simulation of celestial bodies.",
+        "Filters"           : "Several image and video filters.",
+        
+        "Code Editor"       : "A functional code editor with syntax highlighting using tmLanguage files.", 
+        "CSS Backgrounds"   : "Help create complex CSS3 backgrounds.",
+        "Dinosaur Heatmap"  : "An interactive heatmap for recorded dinosaur fossil discoveries.",
+        "Music Player"      : "Music player, visualiser, and synthesiser.",
+        "Periodic Table"    : "An interactive periodic table.",
+        "SVG Editor"        : "A clean SVG editor for creating simple multilayered SVGs."
+    },
+    "ideas": {
+        "Sorting Algorithms": "Visualisations for sorting algorithms.",
+        "Boids"             : "An algorithm simulating flocking.",
+        "Cellular Automata" : "A grid of finite state machines called cells.",
+        "Circuits"          : "Simulation of circuits and explaining the fundamentals of computers.",
+        "Fractals"          : "Visualises fractals using WebGL.",
+        "Light Refraction"  : "Interactive visualisation of how light behaves when refracted and reflected.",
+        "Planets"           : "A simulation of celestial bodies.",
+        "Filters"           : "Several image and video filters.",
+        
+        "Code Editor"       : "A functional code editor with syntax highlighting using tmLanguage files.", 
+        "CSS Backgrounds"   : "Help create complex CSS3 backgrounds.",
+        "Dinosaur Heatmap"  : "An interactive heatmap for recorded dinosaur fossil discoveries.",
+        "Music Player"      : "Music player, visualiser, and synthesiser.",
+        "Periodic Table"    : "An interactive periodic table.",
+        "SVG Editor"        : "A clean SVG editor for creating simple multilayered SVGs."
+    }
+}

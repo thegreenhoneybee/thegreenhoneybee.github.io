@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="180" height="180">
+    <!-- background -->
+    <polygon fill="#fff" points="1000,500 894,316 702,316 606,150 394,150 298,316 106,316 0,500 106,684 298,684 394,850 606,850 702,684 894,684"></polygon>
+    
+    <!-- head -->
+    <polygon fill="#000" points="672,334 586,185 414,185 328,334 414,483 586,483"></polygon>
+
+    <!-- wings -->
+    <polygon fill="#ade" points="384,500 298,351 126,351 40,500 126,649 298,649"></polygon>
+    <polygon fill="#ade" points="960,500 874,351 702,351 616,500 702,649 874,649"></polygon>
+
+    <!-- abdomen -->
+    <polygon fill="#4d4" points="638,607 586,517 414,517 362,607"></polygon>
+    <polygon fill="#000" points="638,607 362,607 328,666 362,726 638,726 672,666"></polygon>
+    <polygon fill="#4d4" points="638,726 362,726 414,815 586,815"></polygon>
+</svg>

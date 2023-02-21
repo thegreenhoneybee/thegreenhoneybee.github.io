@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Page Detials -->
+        <title>Simon's Projects</title>
+		<meta name="author" content="Simon Windon">
+		<meta name="description" content="Simon's Project Directory">
+		<meta name="keywords" content="">
+
+        <!-- Icons -->
+        <link rel="icon" href="/resources/icons/logo.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/resources/icons/apple-touch-icon.png">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Simon's Project Directory">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://thegreenhoneybee.github.io/home">
+        <meta property="og:description" content="A Github Pages site containing some of Simon's personal projects.">
+        <meta property="og:image" content="/resources/icons/logo.png">
+
+        <!-- Javascript & CSS -->
+		<link rel="stylesheet" href="styles.css">
+        <script src="sketch.js"></script>
+	</head>
+	<body>
+        <div id="flashlight"></div>
+        <header>
+            <div><h1>Simon<br>Windon</h1></div>
+            <div><h3>Building lots of stuff on the web.</h3></div>
+            <div><img src="/resources/icons/logo.svg" alt="Site logo, green bee made from hexagons." /></div>
+        </header>
+        <main id="projects">
+            
+            <template id="projectTemplate">
+                <div class="projectWrapper">
+                    <a class="project" draggable="false" target="_blank" rel="noopener noreferrer">
+                        <div class="contentWrapper">
+                            <div class="spacer"></div>
+                            <h4 class="centered"></h4>
+                        </div>
+                        <div class="contentWrapper">
+                            <div class="spacer"></div>
+                            <p class="centered"></p>
+                        </div>
+                    </a>
+                </div>
+            </template>
+
+            <style id="batchProjectCentering"></style>
+            <style id="batchProjectAlignment"></style>
+
+        </main>
+        <footer></footer>
+	</body>
+</html>
+
+<!-- 
+            Adjust height based on window size not viewport size
+            Do not create extra 1/2 padding for hexagon when single column
+
+
+            <a href="https://www.youtube.com/@TheCodingTrain" target="_blank" rel="noopener noreferrer">Daniel Shiffman of The Coding Train</a>
+            <a href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH" target="_blank" rel="noopener noreferrer">Coding Challenges</a>
+
+            <a href="https://www.youtube.com/@3blue1brown" target="_blank" rel="noopener noreferrer">Grant Sanderson of 3Blue1Brown</a> 
+
+            <a href="https://www.youtube.com/@SebastianLague" target="_blank" rel="noopener noreferrer">Sebastian Lague</a>
+            <a href="https://www.youtube.com/playlist?list=PLFt_AvWsXl0ehjAfLFsp1PGaatzAwo0uK" target="_blank" rel="noopener noreferrer">Coding Adventures</a>
+
+            <a href="https://www.youtube.com/@opensources6515">Ole Kröger</a>
+
+            <a href="https://www.youtube.com/@CaseyConnor">Casey Connor</a>
+
+            <a href="https://www.youtube.com/@JennyMaAviation">Jenny Ma</a>
+ -->

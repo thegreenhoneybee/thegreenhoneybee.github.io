@@ -1,0 +1,112 @@
+// RESET CSS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@forward "reset.css";
+
+// FONTS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@font-face {
+    font-family: 'KeaniaOne';
+    src: url('/resources/fonts/KeaniaOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cabin';
+    src: url('/resources/fonts/Cabin-VariableFont_wdth,wght.ttf') format('truetype-variations');
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-style: italic;
+    src: url('/resources/fonts/Cabin-Italic-VariableFont_wdth,wght.ttf') format('truetype-variations');
+}
+
+@font-face {
+    font-family: 'Atari';
+    src: url('/resources/fonts/Atari.ttf') format('truetype-variations');
+}
+
+// DEFINITIONS
+
+@mixin no-select {
+    -webkit-user-select: none;
+            user-select: none;
+}
+
+// COLOURS 
+$background: white;
+$text: black;
+
+$contrast: lightgrey;
+$contrast-dim: silver;
+$contrast-dark: grey;
+$contrast-text: black;
+
+$contrast-2: powderblue;
+$contrast-2-dim: skyblue;
+$contrast-2-dark: steelblue;
+$contrast-2-text: white;
+
+$highlight: violet;
+
+
+// GENERIC CSS ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: $background;
+    color: $text;
+    font-family: 'Cabin';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+}
+
+body > * {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+}
+
+@media (max-width: 1000px) {
+    body > * {
+        padding: 0 10px;
+    }
+}
+
+footer {
+    margin-bottom: 40px;
+}
+
+a {
+    color: $text;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 120px;
+}
+
+h2 {
+    font-size: 70px;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+body, p {
+    font-size: 22px;
+}
+
+i {
+    font-style: italic;
+}
