@@ -1,3 +1,3 @@
 pushd %0\..\..
-wt.exe -d . sass --watch .:. ; split-pane python -m http.server 80
+wt.exe -w 0 -d . sass --watch .:. ; split-pane -d . python -m http.server 80
 popd
