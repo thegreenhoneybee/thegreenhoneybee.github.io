@@ -1,0 +1,13 @@
+@use '../resources/_generic_styles' as *;
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    width: 100%;
+    aspect-ratio: 18.5 / 9.5;
+    background-color: red;
+}
