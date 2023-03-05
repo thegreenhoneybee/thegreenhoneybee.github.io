@@ -104,11 +104,11 @@ h1 {
 }
 
 h2 {
-  font-size: 70px;
+  font-size: 50px;
 }
 
 h3 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 h4 {
@@ -156,7 +156,7 @@ header {
 }
 @media (max-width: 1000px) {
   header {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
     grid-template-areas: "name" "blurb" "icon";
   }
 }
@@ -170,7 +170,7 @@ header > :nth-child(1) h1 {
 header > :nth-child(2) {
   grid-area: blurb;
 }
-header > :nth-child(2) h3 {
+header > :nth-child(2) h2 {
   width: 250px;
 }
 header > :nth-child(3) {
@@ -196,18 +196,18 @@ header div {
 }
 #projects .projectWrapper {
   grid-column-end: span 4;
-  transition: filter 0.2s;
+  transition: filter 0.2s, opacity 0.4s;
   pointer-events: none;
   display: flex;
   justify-content: flex-end;
 }
-#projects .projectWrapper:hover, #projects .projectWrapper.hovered {
+#projects .projectWrapper:hover {
   filter: drop-shadow(2.5px 5px 5px rgba(0, 0, 0, 0.4));
 }
-#projects .projectWrapper:hover .project, #projects .projectWrapper.hovered .project {
+#projects .projectWrapper:hover .project {
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
-#projects .projectWrapper:hover .project .contentWrapper, #projects .projectWrapper.hovered .project .contentWrapper {
+#projects .projectWrapper:hover .project .contentWrapper {
   transform: translateY(-100%);
 }
 #projects .projectWrapper:active .project {

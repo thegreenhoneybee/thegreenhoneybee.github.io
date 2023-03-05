@@ -39,7 +39,7 @@ header {
     "padding icon blurb";
 
     @media (max-width: 1000px) {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
         grid-template-areas: 
         "name"
         "blurb"
@@ -58,7 +58,7 @@ header {
     > :nth-child(2) {
         grid-area: blurb;
 
-        h3 {
+        h2 {
             width: 250px;
         }
     }
@@ -90,13 +90,13 @@ header {
 
     .projectWrapper {
         grid-column-end: span 4;
-        transition: filter 0.2s;
+        transition: filter 0.2s, opacity 0.4s;
         pointer-events: none;
         
         display: flex;
         justify-content: flex-end;
 
-        &:hover, &.hovered {
+        &:hover {
             filter: drop-shadow(2.5px 5px 5px color.adjust($text, $alpha: -0.6));
             .project {
                 clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
@@ -104,6 +104,10 @@ header {
                     transform: translateY(-100%)
                 }
             }
+        }
+
+        &.hidden {
+
         }
 
         &:active .project {
