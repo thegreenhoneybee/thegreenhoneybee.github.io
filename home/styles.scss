@@ -30,10 +30,19 @@
     }
 }
 
+:root {
+    --s: 150px;
+    --w: calc(var(--s) * 2);
+    --a: calc(var(--s) / 2);
+    --r: calc(var(--s) * 13 / 15);
+    --h: calc(var(--w) * 13 / 15);
+}
+
 header {
     display: grid;
     min-height: 100vh;
     grid-template-columns: 1fr 180px 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "name name blurb"
     "padding icon blurb";
@@ -76,12 +85,6 @@ header {
 
 
 #projects {
-    --s: 150px;
-    --w: calc(var(--s) * 2);
-    --a: calc(var(--s) / 2);
-    --r: calc(var(--s) * 13 / 15);
-    --h: calc(var(--w) * 13 / 15);
-
     display: grid;
     grid-template-columns: 75px repeat(auto-fill, var(--s) var(--a));
     grid-auto-rows: var(--r);
@@ -106,6 +109,10 @@ header {
             }
         }
 
+        &.hidden .project {
+            opacity: 0;
+            transform: translateY(20%);
+        }
         &:active .project {
             background: $contrast-dim;
         }
@@ -125,10 +132,6 @@ header {
 
             opacity: 1;
             transform: translateY(0%);
-            &.hidden {
-                opacity: 0;
-                transform: translateY(20%);
-            }
     
             .contentWrapper {
                 display: block;

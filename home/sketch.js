@@ -11,7 +11,7 @@ let observer = new IntersectionObserver((entires) => {
             entry.target.classList.add('hidden')
         }
     })
-}, {threshold: 0.65})
+}, {threshold: 1})
 
 window.addEventListener('mousemove', updateCursor)
 window.addEventListener('scroll', updateCursor)
@@ -44,7 +44,7 @@ async function loadProjects() {
         let project = projectWrapper.querySelector('.project')
         let content = projectWrapper.querySelectorAll('.centered')
 
-        observer.observe(project)
+        observer.observe(projectWrapper)
         project.setAttribute('href', `/${title.toLowerCase().replace(/\s/g, '_')}`)
 
         content[0].textContent = title
