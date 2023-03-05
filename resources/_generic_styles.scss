@@ -7,22 +7,26 @@
 @font-face {
     font-family: 'KeaniaOne';
     src: url('/resources/fonts/KeaniaOne-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Cabin';
     src: url('/resources/fonts/Cabin-VariableFont_wdth,wght.ttf') format('truetype-variations');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Cabin';
     font-style: italic;
     src: url('/resources/fonts/Cabin-Italic-VariableFont_wdth,wght.ttf') format('truetype-variations');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Atari';
     src: url('/resources/fonts/Atari.ttf') format('truetype-variations');
+    font-display: swap;
 }
 
 // DEFINITIONS

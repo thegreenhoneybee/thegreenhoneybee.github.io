@@ -49,25 +49,25 @@ header {
     > :nth-child(1) {
         grid-area: name;
 
-        h1 {
+        // h1 {
             font-family: 'KeaniaOne';
             line-height: 0.9;
-        }
+        // }
     }
 
     > :nth-child(2) {
         grid-area: blurb;
 
-        h2 {
+        // h2 {
             width: 250px;
-        }
+        // }
     }
 
     > :nth-child(3) {
         grid-area: icon;
     }
 
-    div {
+    > div {
         display: flex;
         justify-content: center;
         align-items: center;
