@@ -28,23 +28,30 @@ function updateCursor(e) {
 async function loadProjects() {
     const projectsData = await fetch('projects.json', {cache: 'no-cache'}).then(response => response.json())
 
+    let observer = new IntersectionObserver((entires) => {
+        entires.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('hidden')
+            } else if (entry.boundingClientRect.top > 0) {
+                entry.target.classList.add('hidden')
+            }
+        })
+    }, {threshold: 0.65})
+
     let counter = 0
     for (let [title, description] of Object.entries(projectsData.complete)) {
         let project = projectTemplate.content.cloneNode(true)
         let content = project.querySelectorAll('.centered')
+
+        observer.observe(project.querySelector('.project'))
+        project.querySelector('.project').setAttribute('href', `/${title.toLowerCase().replace(/\s/g, '_')}`)
 
         content[0].textContent = title
         content[0].setAttribute('name', `ct${counter++}`)
 
         content[1].textContent = description
         content[1].setAttribute('name', `ct${counter++}`)
-        
-        project.querySelector('.project').setAttribute('href', `/${title.toLowerCase().replace(/\s/g, '_')}`)
-        
-        if (Math.random() < 0.1) {
-            
-            document.getElementById('projects').append()
-        }
+
         document.getElementById('projects').append(project)
     }
 

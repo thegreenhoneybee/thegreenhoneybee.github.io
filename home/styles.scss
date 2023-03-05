@@ -49,18 +49,18 @@ header {
     > :nth-child(1) {
         grid-area: name;
 
-        // h1 {
+        h1 {
             font-family: 'KeaniaOne';
             line-height: 0.9;
-        // }
+        }
     }
 
     > :nth-child(2) {
         grid-area: blurb;
 
-        // h2 {
+        h2 {
             width: 250px;
-        // }
+        }
     }
 
     > :nth-child(3) {
@@ -90,7 +90,7 @@ header {
 
     .projectWrapper {
         grid-column-end: span 4;
-        transition: filter 0.2s, opacity 0.4s;
+        transition: filter 0.2s;
         pointer-events: none;
         
         display: flex;
@@ -101,13 +101,9 @@ header {
             .project {
                 clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
                 .contentWrapper {
-                    transform: translateY(-100%)
+                    transform: translateY(-100%);
                 }
             }
-        }
-
-        &.hidden {
-
         }
 
         &:active .project {
@@ -123,9 +119,16 @@ header {
             text-align: center;
     
             clip-path: polygon(27.5% 5%, 72.5% 5%, 95% 50%, 72.5% 95%, 27.5% 95%, 5% 50%);
-            transition: clip-path 0.2s;
+            transition: clip-path 0.2s, opacity 0.5s, transform 0.5s;
             background: $contrast;
             color: $contrast-text;
+
+            opacity: 1;
+            transform: translateY(0%);
+            &.hidden {
+                opacity: 0;
+                transform: translateY(20%);
+            }
     
             .contentWrapper {
                 display: block;
