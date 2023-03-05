@@ -3,13 +3,22 @@ let state = {
     hexagonColumns: null
 }
 
-window.addEventListener('load', () => {
-    window.addEventListener('mousemove', updateCursor)
-    window.addEventListener('scroll', updateCursor)
-    window.addEventListener('resize', updateHexagons)
-    loadProjects()
-})
+let observer = new IntersectionObserver((entires) => {
+    entires.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove('hidden')
+        } else if (entry.boundingClientRect.top > 0) {
+            entry.target.classList.add('hidden')
+        }
+    })
+}, {threshold: 0.65})
 
+window.addEventListener('mousemove', updateCursor)
+window.addEventListener('scroll', updateCursor)
+window.addEventListener('resize', updateHexagons)
+loadProjects()
+
+// Update the position and scroll of the cursor background
 function updateCursor(e) {
     if (e.type == 'mousemove') {
         state.cursor.x = e.clientX
@@ -25,26 +34,18 @@ function updateCursor(e) {
     })
 }
 
+// Loads projects from json, creates html from template element
 async function loadProjects() {
     const projectsData = await fetch('projects.json', {cache: 'no-cache'}).then(response => response.json())
 
-    let observer = new IntersectionObserver((entires) => {
-        entires.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.remove('hidden')
-            } else if (entry.boundingClientRect.top > 0) {
-                entry.target.classList.add('hidden')
-            }
-        })
-    }, {threshold: 0.65})
-
     let counter = 0
     for (let [title, description] of Object.entries(projectsData.complete)) {
-        let project = projectTemplate.content.cloneNode(true)
-        let content = project.querySelectorAll('.centered')
+        let projectWrapper = projectTemplate.content.querySelector('.projectWrapper').cloneNode(true)
+        let project = projectWrapper.querySelector('.project')
+        let content = projectWrapper.querySelectorAll('.centered')
 
-        observer.observe(project.querySelector('.project'))
-        project.querySelector('.project').setAttribute('href', `/${title.toLowerCase().replace(/\s/g, '_')}`)
+        observer.observe(project)
+        project.setAttribute('href', `/${title.toLowerCase().replace(/\s/g, '_')}`)
 
         content[0].textContent = title
         content[0].setAttribute('name', `ct${counter++}`)
@@ -52,13 +53,14 @@ async function loadProjects() {
         content[1].textContent = description
         content[1].setAttribute('name', `ct${counter++}`)
 
-        document.getElementById('projects').append(project)
+        document.getElementById('projects').append(projectWrapper)
     }
 
     centerHexagonContent(3)
     updateHexagons()
 }
 
+// Centers text within elements with the class 'centered' recursively 
 function centerHexagonContent(n=0) {
     batchProjectCentering.innerHTML = Array.from(projects.querySelectorAll('.centered')).map((e, i) => {
         return `.centered[name=ct${i}] { padding-top: ${(contentHeight(e.parentElement) - contentHeight(e)) / 2}px; }`
@@ -69,12 +71,14 @@ function centerHexagonContent(n=0) {
     }
 }
 
+// Return the height of an element without padding
 function contentHeight(element) {
     let cs = getComputedStyle(element)
     let padding = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)
     return element.clientHeight - padding
 }
 
+// Updates the css to reflect the number of columns of hexagons
 function updateHexagons() {
     let style = getComputedStyle(projects)
     let sideLength = style.getPropertyValue('--s')
