@@ -11,7 +11,7 @@ let observer = new IntersectionObserver((entires) => {
             entry.target.classList.add('hidden')
         }
     })
-}, {threshold: 1})
+}, {threshold: 0.5})
 
 window.addEventListener('mousemove', updateCursor)
 window.addEventListener('scroll', updateCursor)
@@ -41,10 +41,11 @@ async function loadProjects() {
     let counter = 0
     for (let [title, description] of Object.entries(projectsData.complete)) {
         let projectWrapper = projectTemplate.content.querySelector('.projectWrapper').cloneNode(true)
+        let projectObserver = projectWrapper.querySelector('.projectObserver')
         let project = projectWrapper.querySelector('.project')
         let content = projectWrapper.querySelectorAll('.centered')
 
-        observer.observe(projectWrapper)
+        observer.observe(projectObserver) //Single file projects have different height ##TODO
         project.setAttribute('href', `/${title.toLowerCase().replace(/\s/g, '_')}`)
 
         content[0].textContent = title
