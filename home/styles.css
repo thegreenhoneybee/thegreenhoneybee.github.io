@@ -155,6 +155,7 @@ i {
 header {
   display: grid;
   min-height: 100vh;
+  min-height: 100svh;
   grid-template-columns: 1fr 180px 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "name name blurb" "padding icon blurb";
@@ -171,12 +172,14 @@ header > :nth-child(1) {
 header > :nth-child(1) h1 {
   font-family: "KeaniaOne";
   line-height: 0.9;
+  font-size: clamp(1rem, 24vw, 120px);
 }
 header > :nth-child(2) {
   grid-area: blurb;
 }
 header > :nth-child(2) h2 {
-  width: 250px;
+  width: 5em;
+  font-size: clamp(1rem, 10vw, 50px);
 }
 header > :nth-child(3) {
   grid-area: icon;
