@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Page Detials -->
-        <title>Simon's Project</title>
+        <title>Periodic Table</title>
 		<meta name="author" content="Simon Windon">
 		<meta name="description" content="Periodic Table">
 		<meta name="keywords" content="">
@@ -15,7 +15,7 @@
         <link rel="apple-touch-icon" href="/resources/icons/apple-touch-icon.png">
 
         <!-- Open Graph -->
-        <meta property="og:title" content="Simon's Project">
+        <meta property="og:title" content="Periodic Table">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://thegreenhoneybee.github.io/">
         <meta property="og:description" content="One of Simon's personal projects.">
@@ -23,11 +23,15 @@
 
         <!-- Javascript & CSS -->
 		<link rel="stylesheet" href="styles.css">
-        <script src="sketch.js"></script>
+        <script defer src="sketch.js"></script>
 	</head>
 	<body>
         <main>
-            <div id="container"></div>
+            <div id="container">
+                <template id="elementTemplate">
+                    <div class="element"></div>
+                </template>
+            </div>
         </main>
 	</body>
 </html>

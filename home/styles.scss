@@ -1,7 +1,7 @@
 @use '../resources/_generic_styles' as *;
 @use "sass:color";
 
-@media (pointer: coarse), (hover: none) {
+@media not (any-hover: none) {
     #flashlight {
         display: none;
     }

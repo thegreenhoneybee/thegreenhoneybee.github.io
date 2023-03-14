@@ -127,7 +127,7 @@ i {
   font-style: italic;
 }
 
-@media (pointer: coarse), (hover: none) {
+@media not (any-hover: none) {
   #flashlight {
     display: none;
   }
