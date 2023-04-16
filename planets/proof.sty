@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{math}
+
+\begin{aligned}
+   V &= \pi (r_{a0}^2 + r_{b0}^2)
+\\ d &= r_{a0} + r_{b0}
+\\
+\\ V &= \pi (r_{a0}^2 + (d-r_{a0})^2)
+\\ 0 &= \pi (r_{a0}^2 + (d-r_{a0})^2) - V
+\\   &= r_{a0}^2 + (d-r_{a0})^2 - \frac{V}{\pi}
+\\   &= r_{a0}^2 + d^2 - 2dr_{a0} + r_{a0}^2 - \frac{V}{\pi}
+\\   &= 2r_{a0}^2 - 2dr_{a0} + d^2 - \frac{V}{\pi}
+\\
+\\ x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\\
+\\ r_{a1}, r_{b1} &= \frac{2d \pm \sqrt{(2d)^2 - 4 \cdot 2 \cdot (d^2 - \frac{V}{\pi})}}{2 \cdot 2}
+\\                &= \frac{2d \pm \sqrt{4d^2 - 8 \cdot (d^2 - \frac{V}{\pi})}}{4}
+\\                &= \frac{2d \pm \sqrt{4d^2 - 8d^2 + 8 \frac{V}{\pi}}}{4}
+\\                &= \frac{2d \pm \sqrt{-4d^2 + 8 \frac{V}{\pi}}}{4}
+\\
+\\ m_d &= ( 1 - \frac{\pi r_{b1}^2}{\pi r_{b0}^2} ) * m_{b0}
+\\     &= ( 1 - \frac{r_{b1}^2}{r_{b0}^2} ) * m_{b0}
+\\ m_{b1} &= m_{b0} + m_d
+\\ m_{a1} &= m_{a0} - m_d
+\end{aligned}
+
+\end{math}
+
+\end{document}
