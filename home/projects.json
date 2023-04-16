@@ -4,13 +4,13 @@
         "Periodic Table"    : "An interactive periodic table."
     },
     "ideas": {
+        "Stylized Home"     : "Inspired by https://www.artofthetitle.com/title/la-casa-de-las-flores/",
         "Sorting Algorithms": "Visualisations for sorting algorithms.",
         "Boids"             : "An algorithm simulating flocking.",
         "Cellular Automata" : "A grid of finite state machines called cells.",
         "Circuits"          : "Simulation of circuits and explaining the fundamentals of computers.",
         "Fractals"          : "Visualises fractals using WebGL.",
         "Light Refraction"  : "Interactive visualisation of how light behaves when refracted and reflected.",
-        "Planets"           : "A simulation of celestial bodies.",
         "Filters"           : "Several image and video filters.",
         
         "Code Editor"       : "A functional code editor with syntax highlighting using tmLanguage files.", 

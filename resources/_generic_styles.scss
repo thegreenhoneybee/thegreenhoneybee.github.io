@@ -36,6 +36,11 @@
             user-select: none;
 }
 
+@mixin pixelated {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
 // COLOURS 
 $background: white;
 $text: black;
