@@ -1,7 +1,0 @@
-@use '../resources/_generic_styles' as *;
-
-canvas {
-    @include pixelated;
-    background: #445;
-    margin-top: 20px;
-}
