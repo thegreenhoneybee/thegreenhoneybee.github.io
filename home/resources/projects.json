@@ -1,6 +1,5 @@
 {
     "complete": {
-        "Planets"           : "A simulation of celestial bodies.",
         "Periodic Table"    : "An interactive periodic table."
     },
     "ideas": {
@@ -9,9 +8,10 @@
         "Boids"             : "An algorithm simulating flocking.",
         "Cellular Automata" : "A grid of finite state machines called cells.",
         "Circuits"          : "Simulation of circuits and explaining the fundamentals of computers.",
+        "Filters"           : "Several image and video filters.",
         "Fractals"          : "Visualises fractals using WebGL.",
         "Light Refraction"  : "Interactive visualisation of how light behaves when refracted and reflected.",
-        "Filters"           : "Several image and video filters.",
+        "Planets"           : "A simulation of celestial bodies.",
         
         "Code Editor"       : "A functional code editor with syntax highlighting using tmLanguage files.", 
         "CSS Backgrounds"   : "Help create complex CSS3 backgrounds.",

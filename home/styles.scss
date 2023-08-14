@@ -15,8 +15,8 @@
     width: 500px;
     aspect-ratio: 1 / 1;
 
-    -webkit-mask-image: url('hexagon_background.svg');
-    mask-image: url('hexagon_background.svg');
+    -webkit-mask-image: url('./resources/hexagon_background.svg');
+    mask-image: url('./resources/hexagon_background.svg');
     -webkit-mask-size: 45px 26px;
     mask-size: 45px 26px;
 
@@ -150,13 +150,13 @@ header {
                     padding: 5%;
                 }
     
-                &::before, .spacer {
+                .shapeOutsideLeft, .shapeOutsideRight {
                     width: 50%;
                     height: 100%;
                     shape-margin: 10px;
                 }
     
-                &::before {
+                .shapeOutsideLeft {
                     content: "";
                     float: left;
                     shape-outside: polygon(
@@ -168,7 +168,7 @@ header {
                     );
                 }
     
-                .spacer {
+                .shapeOutsideRight {
                     float: right;
                     shape-outside: polygon(
                         100% 0,

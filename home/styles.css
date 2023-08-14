@@ -138,8 +138,8 @@ i {
   z-index: -1;
   width: 500px;
   aspect-ratio: 1/1;
-  -webkit-mask-image: url("hexagon_background.svg");
-  mask-image: url("hexagon_background.svg");
+  -webkit-mask-image: url("./resources/hexagon_background.svg");
+  mask-image: url("./resources/hexagon_background.svg");
   -webkit-mask-size: 45px 26px;
   mask-size: 45px 26px;
 }
@@ -148,7 +148,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  background: radial-gradient(violet, transparent 70%);
+  background: radial-gradient(#dd44dd, transparent 70%);
   opacity: 0.35;
 }
 
@@ -252,17 +252,17 @@ header > div {
 #projects .projectWrapper .project .contentWrapper:first-child {
   padding: 5%;
 }
-#projects .projectWrapper .project .contentWrapper::before, #projects .projectWrapper .project .contentWrapper .spacer {
+#projects .projectWrapper .project .contentWrapper .shapeOutsideLeft, #projects .projectWrapper .project .contentWrapper .shapeOutsideRight {
   width: 50%;
   height: 100%;
   shape-margin: 10px;
 }
-#projects .projectWrapper .project .contentWrapper::before {
+#projects .projectWrapper .project .contentWrapper .shapeOutsideLeft {
   content: "";
   float: left;
   shape-outside: polygon(0 0, 50% 0, 0 50%, 50% 100%, 0 100%);
 }
-#projects .projectWrapper .project .contentWrapper .spacer {
+#projects .projectWrapper .project .contentWrapper .shapeOutsideRight {
   float: right;
   shape-outside: polygon(100% 0, 50% 0, 100% 50%, 50% 100%, 100% 100%);
 }
