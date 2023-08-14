@@ -93,7 +93,7 @@ function updateHexagons() {
     if (hexagonColumns == state.hexagonColumns) {return}
 
     state.hexagonColumns = hexagonColumns
-    let offset = Math.ceil(hexagonColumns / 2)
+    const offset = Math.ceil(hexagonColumns / 2)
 
     projects.querySelectorAll('projectObserver').forEach((p) => {
         p.classList.add('hidden')
